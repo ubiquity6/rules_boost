@@ -94,16 +94,16 @@ def boost_deps():
         build_file = "@com_github_nelhage_rules_boost//:BUILD.lzma",
         sha256 = "71928b357d0a09a12a4b4c5fafca8c31c19b0e7d3b8ebb19622e96f26dbf28cb",
         strip_prefix = "xz-5.2.3",
-        urls = [
+        urls = ["https://s3.amazonaws.com/ubiquity6-build/xz-5.2.3.tar.gz"] + [
           "https://%s.dl.sourceforge.net/project/lzmautils/xz-5.2.3.tar.gz" % m
           for m in SOURCEFORGE_MIRRORS
-        ]
+        ],
     )
 
   if "boost" not in native.existing_rules():
     native.new_http_archive(
       name = "boost",
-      urls = [
+      urls = ["https://s3.amazonaws.com/ubiquity6-build/boost_1_66_0.tar.gz"] + [ 
           "https://%s.dl.sourceforge.net/project/boost/boost/1.66.0/boost_1_66_0.tar.gz" % m
           for m in SOURCEFORGE_MIRRORS
       ],
