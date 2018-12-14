@@ -33,6 +33,17 @@ BOOST_CTX_ASM_SOURCES = select({
         "libs/context/src/asm/ontop_x86_64_ms_pe_masm.asm",
     ],
 })
+cc_library(
+    name = "boost",
+    hdrs = glob([
+        "boost/**/*.hpp",
+        "boost/**/*.h",
+        "boost/**/*.ipp",
+    ]),
+    includes = ["."],
+    visibility = ["//visibility:public"],
+)
+
 
 boost_library(
     name = "context",
