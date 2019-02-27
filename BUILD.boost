@@ -1436,3 +1436,69 @@ boost_library(
     name = "winapi",
     visibility = ["//visibility:private"],
 )
+
+boost_library(
+    name = "tti",
+    deps = [
+        ":config",
+        ":function_types",
+        ":mpl",
+        ":preprocessor",
+        ":type_traits",
+    ],
+)
+
+boost_library(
+    name = "proto",
+    deps = [
+        ":fusion",
+    ],
+)
+
+boost_library(
+    name = "xpressive",
+    deps = [
+        ":config",
+        ":core",
+        ":type_traits",
+    ],
+)
+
+boost_library(
+    name = "property_map",
+    deps = [
+        ":config",
+        ":core",
+        ":function",
+        ":lexical_cast",
+        ":type_traits",
+    ],
+)
+
+
+boost_library(
+    name = "graph",
+    hdrs = [
+        "boost/pending/container_traits.hpp",
+        "boost/pending/detail/property.hpp",
+        "boost/pending/indirect_cmp.hpp",
+        "boost/pending/property.hpp",
+        "boost/pending/queue.hpp",
+        "boost/pending/relaxed_heap.hpp",
+    ],
+    deps = [
+        ":algorithm",
+        ":conversion",
+        ":fusion",
+        ":intrusive_ptr",
+        ":lexical_cast",
+        ":parameter",
+        ":property_map",
+        ":property_tree",
+        ":proto",
+        ":tti",
+        ":typeof",
+        ":unordered",
+        ":xpressive",
+    ],
+)
