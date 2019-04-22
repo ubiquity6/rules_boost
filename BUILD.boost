@@ -1502,3 +1502,7 @@ boost_library(
         ":xpressive",
     ],
 )
+
+boost_library(
+    name = "lambda",
+)
